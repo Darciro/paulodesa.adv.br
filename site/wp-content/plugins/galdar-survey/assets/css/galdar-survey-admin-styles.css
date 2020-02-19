@@ -1,0 +1,35 @@
+.galdar-survey-metabox .survey-loader-wrapper{
+    position: relative;
+    display: flex;
+    height: 1rem;
+    font-size: .75rem;
+    background-color: #e9ecef;
+    border-radius: .25rem;
+    margin-bottom: 30px;
+}
+
+.galdar-survey-metabox .survey-loader{
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #00669b;
+    transition: width .6s ease;
+}
+
+.galdar-survey-metabox span {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    font-style: italic;
+}
+
+.galdar-survey-metabox span.right {
+    left: inherit;
+    right: 0;
+}
