@@ -24,6 +24,7 @@
 <!--<a class="skip-link screen-reader-text" href="#content"><?php /*esc_html_e( 'Skip to content', 'pds' ); */?></a>-->
 
 <header id="masthead" class="site-header">
+
     <div class="site-branding">
         <h1 class="site-title">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -37,38 +38,14 @@
         <?php endif; ?>
     </div>
 
-    <!--<nav id="site-navigation" class="main-navigation">
-        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php /*esc_html_e( 'Primary Menu', 'pds' ); */?></button>
-        <?php
-/*        wp_nav_menu( array(
-            'theme_location' => 'menu-1',
-            'menu_id'        => 'primary-menu',
-        ) );
-        */?>
-    </nav>-->
-
     <nav role="navigation">
         <div id="menu-toggle">
-            <!--
-			A fake / hidden checkbox is used as click reciever,
-			so you can use the :checked selector on it.
-			-->
             <input type="checkbox" />
 
-            <!--
-			Some spans to act as a hamburger.
-
-			They are acting like a real hamburger,
-			not that McDonalds stuff.
-			-->
             <span></span>
             <span></span>
             <span></span>
 
-            <!--
-			Too bad the menu has to be inside of the button
-			but hey, it's pure CSS magic.
-			-->
             <ul id="menu">
                 <a href="#"><li>Home</li></a>
                 <a href="#"><li>About</li></a>
@@ -78,23 +55,4 @@
             </ul>
         </div>
     </nav>
-
-    <!--<div id="menu">
-        <div class="hamburger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-        <div class="menu-inner">
-
-            <ul>
-                <li>Menu Item</li>
-                <li>Menu Item</li>
-                <li>Menu Item</li>
-                <li>Menu Item</li>
-                <li>Menu Item</li>
-                <li>Menu Item</li>
-            </ul>
-        </div>
-    </div>-->
 </header>

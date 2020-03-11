@@ -11,19 +11,12 @@
 
 ?>
 
-<footer id="colophon" class="site-footer text-center hidden">
+<footer id="colophon" class="site-footer text-center invisible">
     <div class="site-info">
-        <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'pds' ) ); ?>">
-            <?php
-            /* translators: %s: CMS name, i.e. WordPress. */
-            printf( esc_html__( 'Proudly powered by %s', 'pds' ), 'WordPress' );
-            ?>
+        <a href="#" style="display: inline-block;width: 300px;height: auto;">
+            <img style="width: 300px;height: auto;" src="<?php echo get_template_directory_uri(); ?>/assets/images/galdar-logo.png">
         </a>
-        <span class="sep"> | </span>
-            <?php
-            /* translators: 1: Theme name, 2: Theme author. */
-            printf( esc_html__( 'Theme: %1$s by %2$s.', 'pds' ), 'pds', '<a href="https://github.com/darciro">Ricardo Carvalho</a>' );
-            ?>
+        <p>Desenvolvido por Galdar Tecnologia</p>
     </div>
 </footer>
 

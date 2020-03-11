@@ -34,13 +34,20 @@
                     }
                 });
 
-                $('.about-sep').each(function() {
+                // if( $(this).scrollTop() > ( $(window).innerHeight() - $('.site-footer').outerHeight() ) ) {
+                if( $(this).scrollTop() > ( $(window).innerHeight() - $('.site-footer').outerHeight() ) ) {
+                    $('.site-footer').removeClass('invisible');
+                } else {
+                    $('.site-footer').addClass('invisible');
+                }
+
+                /*$('.footer-sep').each(function() {
                     if (isScrolledIntoView(this) === true) {
-                       $('.site-footer').removeClass('hidden');
+                       $('.site-footer').removeClass('invisible');
                     } else {
-                        $('.site-footer').addClass('hidden');
+                        $('.site-footer').addClass('invisible');
                     }
-                });
+                });*/
             });
         }
 
