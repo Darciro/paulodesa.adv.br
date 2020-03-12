@@ -317,6 +317,7 @@ section {
 
 #main article {
     margin-top: 100vh;
+    margin-top: calc(var(--vh, 1vh) * 100);
 }
 
 .centered {
@@ -330,6 +331,7 @@ section {
 #about {
     width: 100vw;
     margin-top: 100vw;
+    margin-top: calc(var(--vh, 1vh) * 100);
     min-height: 100vh;
     background: rgb(29, 28, 28);
 }
@@ -410,4 +412,47 @@ section {
     color: #fff;
     display: block;
     width: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+    .about-card-wrapper {
+        max-width: 90%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .site-branding {
+        z-index: 1;
+    }
+
+    .site-title a {
+        font-size: 26px;
+    }
+
+    .sub-heading,
+    .heading {
+        padding: 0 30px;
+    }
+
+    .heading {
+        font-size: 36px;
+    }
+
+    header nav {
+        z-index: 2;
+    }
+
+    .entry-content.centered,
+    .entry-content {
+        position: static;
+        width: 100%;
+        max-width: fit-content;
+        top: inherit;
+        left: inherit;
+        transform: none;
+    }
+}
+
+@media only screen and (min-width: 576px) {
+
 }
