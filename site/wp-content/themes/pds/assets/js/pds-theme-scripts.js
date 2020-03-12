@@ -39,9 +39,15 @@
                 return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
             }
 
-            // If element is scrolled into view, fade it in
             $(window).scroll(function () {
-                if( vars.mastfootHeight !== $('#mastfoot').outerHeight() )
+
+                if( $(this).scrollTop() > 1 ) {
+                    $('.scroll-down').fadeOut();
+                } else {
+                    $('.scroll-down').fadeIn();
+                }
+
+                if (vars.mastfootHeight !== $('#mastfoot').outerHeight())
                     $('.site-footer-padding').height($('#mastfoot').outerHeight());
 
                 $('.scroll-animations .animated').each(function () {

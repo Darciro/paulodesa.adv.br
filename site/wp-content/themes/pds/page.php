@@ -20,7 +20,10 @@ get_header();
             <p class="sub-heading">Subtexto aqui</p>
             <h2 class="heading"><?php the_title(); ?></h2>
         </div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/justice-logo.svg">
+        <img class="call-to-action right" src="<?php echo get_template_directory_uri(); ?>/assets/images/justice-logo.svg">
+        <div class="scroll-down">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/scroll-down.svg">
+        </div>
     </section>
 
     <main id="main" class="site-main">

@@ -27,6 +27,14 @@ header {
     left: 0;
 }
 
+a {
+    color: #c7d0d8;
+}
+
+a:hover {
+    color: tomato;
+}
+
 body.admin-bar header {
     top: 32px;
 }
@@ -346,13 +354,44 @@ section {
     top: 0;
 }
 
-.jumbotron img {
+.jumbotron img.call-to-action {
     position: fixed;
     top: 10%;
     right: -40%;
     z-index: -1;
     max-height: 100%;
     opacity: .25;
+}
+
+.jumbotron img.call-to-action.right {
+    left: 100% !important;
+}
+
+#intro.jumbotron img.call-to-action {
+    max-width: 60%;
+    opacity: 0.25;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    margin: 0;
+}
+
+.scroll-down {
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    right: 0;
+    width: 50px;
+    height: 100px;
+    text-align: center;
+    margin-left: -25px;
+}
+
+.scroll-down img {
+    height: 100%;
+    width: auto;
 }
 
 .entry-content-wrapper {
@@ -414,7 +453,12 @@ section {
     width: 50px;
 }
 
+.social-icons li a:hover img{
+    fill: tomato;
+}
+
 @media only screen and (max-width: 768px) {
+    #intro.jumbotron img.call-to-action,
     .about-card-wrapper {
         max-width: 90%;
     }
