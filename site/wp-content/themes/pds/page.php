@@ -15,6 +15,14 @@
 get_header();
 ?>
 
+    <section id="intro" class="jumbotron">
+        <div class="centered text-center">
+            <p class="sub-heading">Subtexto aqui</p>
+            <h2 class="heading"><?php the_title(); ?></h2>
+        </div>
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/justice-logo.svg">
+    </section>
+
     <main id="main" class="site-main">
 
 		<?php

@@ -9,19 +9,19 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="margin-bottom: 388px;">
-	<header class="entry-header">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<!--<header class="entry-header">
         <div class="centered text-center">
             <p class="sub-heading">Subtítulo aqui</p>
-            <?php the_title( '<h1 class="entry-title heading">', '</h1>' ); ?>
+            <?php /*the_title( '<h1 class="entry-title heading">', '</h1>' ); */?>
         </div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/justice-logo.svg">
-	</header>
+        <img src="<?php /*echo get_template_directory_uri(); */?>/assets/images/justice-logo.svg">
+	</header>-->
 
 	<?php pds_post_thumbnail(); ?>
 
 	<div class="entry-content-wrapper">
-        <div class="entry-content" style="margin-top: 100vh; min-height: 50vh;">
+        <div class="centered entry-content">
             <?php
             the_content();
 
@@ -55,6 +55,4 @@
 			?>
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
-
-    <div class="invisible footer-sep" style="width: 100%; height: 1px; margin-bottom: 150px"></div>
 </article><!-- #post-<?php the_ID(); ?> -->

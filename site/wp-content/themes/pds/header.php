@@ -13,46 +13,63 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<!--<a class="skip-link screen-reader-text" href="#content"><?php /*esc_html_e( 'Skip to content', 'pds' ); */?></a>-->
+<div id="page" class="site">
 
-<header id="masthead" class="site-header">
+    <!--<a class="skip-link screen-reader-text" href="#content"><?php /*esc_html_e( 'Skip to content', 'pds' ); */ ?></a>-->
 
-    <div class="site-branding">
-        <h1 class="site-title">
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                <?php bloginfo( 'name' ); ?>
-            </a>
-        </h1>
-	    <?php
-        $_s_description = get_bloginfo( 'description', 'display' );
-        if ( $_s_description || is_customize_preview() ) : ?>
-        <p class="site-description"><?php echo $_s_description; /* WPCS: xss ok. */ ?></p>
-        <?php endif; ?>
-    </div>
+    <header id="masthead" class="site-header">
 
-    <nav role="navigation">
-        <div id="menu-toggle">
-            <input type="checkbox" />
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-            <ul id="menu">
-                <a href="#"><li>Home</li></a>
-                <a href="#"><li>About</li></a>
-                <a href="#"><li>Info</li></a>
-                <a href="#"><li>Contact</li></a>
-                <a href="https://erikterwan.com/" target="_blank"><li>Show me more</li></a>
-            </ul>
+        <div class="site-branding">
+            <h1 class="site-title">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php bloginfo( 'name' ); ?>
+                </a>
+            </h1>
+			<?php
+			$_s_description = get_bloginfo( 'description', 'display' );
+			if ( $_s_description || is_customize_preview() ) : ?>
+                <p class="site-description"><?php echo $_s_description; /* WPCS: xss ok. */ ?></p>
+			<?php endif; ?>
         </div>
-    </nav>
-</header>
+
+        <nav role="navigation">
+            <div id="main-nav-toggle">
+                <input type="checkbox"/>
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+	            <?php
+	            wp_nav_menu( array(
+		            'theme_location' => 'main-nav',
+		            'menu_id'        => 'main-nav',
+		            'container'      => 'ul',
+	            ) );
+	            ?>
+
+                <!--<ul id="menu">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Info</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>-->
+            </div>
+        </nav>
+    </header>

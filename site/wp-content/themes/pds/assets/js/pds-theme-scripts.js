@@ -1,12 +1,25 @@
 (function ($) {
+    'use strict';
+    var vars = {
+        mastfootHeight: 0
+    };
+
     $(document).ready(function () {
         pds.init();
     });
 
     var pds = {
         init: function () {
+            this.utils();
             this.menu();
             this.animation();
+        },
+
+        utils: function () {
+            vars.mastfootHeight = $('#mastfoot').outerHeight();
+            $('.site-footer-padding').height(vars.mastfootHeight);
+
+            console.log(vars.mastfootHeight);
         },
 
         menu: function () {
@@ -27,27 +40,22 @@
             }
 
             // If element is scrolled into view, fade it in
-            $(window).scroll(function() {
-                $('.scroll-animations .animated').each(function() {
+            $(window).scroll(function () {
+                if( vars.mastfootHeight !== $('#mastfoot').outerHeight() )
+                    $('.site-footer-padding').height($('#mastfoot').outerHeight());
+
+                $('.scroll-animations .animated').each(function () {
                     if (isScrolledIntoView(this) === true) {
-                        $(this).removeClass('invisible').addClass( $(this).data('class-in') );
+                        $(this).removeClass('invisible').addClass($(this).data('class-in'));
                     }
                 });
 
-                // if( $(this).scrollTop() > ( $(window).innerHeight() - $('.site-footer').outerHeight() ) ) {
-                if( $(this).scrollTop() > ( $(window).innerHeight() - $('.site-footer').outerHeight() ) ) {
-                    $('.site-footer').removeClass('invisible');
+                if ($(this).scrollTop() > ($(window).innerHeight())) {
+                    $('#mastfoot').removeClass('invisible');
                 } else {
-                    $('.site-footer').addClass('invisible');
+                    $('#mastfoot').addClass('invisible');
                 }
 
-                /*$('.footer-sep').each(function() {
-                    if (isScrolledIntoView(this) === true) {
-                       $('.site-footer').removeClass('invisible');
-                    } else {
-                        $('.site-footer').addClass('invisible');
-                    }
-                });*/
             });
         }
 
