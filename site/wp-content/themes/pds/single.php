@@ -12,13 +12,19 @@ get_header();
 
     <section id="intro" class="jumbotron">
         <div class="centered text-center">
-            <p class="sub-heading">Subtexto aqui</p>
+            <?php
+            $categories = get_the_category();
+            if ( ! empty( $categories ) ) {
+	            echo '<p class="sub-heading"><a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a></p>';
+            }
+            ?>
             <h2 class="heading"><?php the_title(); ?></h2>
         </div>
-        <img class="call-to-action right" src="<?php echo get_template_directory_uri(); ?>/assets/images/justice-logo.svg">
-        <div class="scroll-down">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/scroll-down.svg">
-        </div>
+        <?php if(has_post_thumbnail()): ?>
+            <div class="thumbnail-bg" style="background-image: url(<?php the_post_thumbnail_url(); ?>)"></div>
+        <?php else: ?>
+            <img class="call-to-action right" src="<?php echo get_template_directory_uri(); ?>/assets/images/justice-logo.svg">
+        <?php endif; ?>
     </section>
 
     <main id="main" class="site-main">
@@ -31,7 +37,7 @@ get_header();
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
-				// comments_template();
+				comments_template();
 			endif;
 
 		endwhile; // End of the loop.

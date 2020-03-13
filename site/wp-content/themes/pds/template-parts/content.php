@@ -9,30 +9,13 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<!--<header class="entry-header">
-		<?php
-/*		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) :
-			*/?>
-			<div class="entry-meta">
-				<?php
-/*				pds_posted_on();
-				pds_posted_by();
-				*/?>
-			</div>
-		<?php /*endif; */?>
-	</header>-->
-
-	<?php pds_post_thumbnail(); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('clear-fix'); ?>>
 
 	<div class="entry-content-wrapper">
-        <div class="centered entry-content">
+        <div class="entry-content">
+            <p class="post-time text-uppercase"><?php the_time('F j, Y'); ?></p>
+            <h3 class="heading"><?php the_title(); ?></h3>
+
             <?php
             the_content( sprintf(
                 wp_kses(

@@ -20,10 +20,11 @@ get_header();
             <p class="sub-heading">Subtexto aqui</p>
             <h2 class="heading"><?php the_title(); ?></h2>
         </div>
-        <img class="call-to-action right" src="<?php echo get_template_directory_uri(); ?>/assets/images/justice-logo.svg">
-        <div class="scroll-down">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/scroll-down.svg">
-        </div>
+	    <?php if(has_post_thumbnail()): ?>
+            <div class="thumbnail-bg" style="background: url(<?php the_post_thumbnail_url(); ?>)"></div>
+	    <?php else: ?>
+            <img class="call-to-action right" src="<?php echo get_template_directory_uri(); ?>/assets/images/justice-logo.svg">
+	    <?php endif; ?>
     </section>
 
     <main id="main" class="site-main">

@@ -21,8 +21,8 @@ get_header();
             <h2 class="heading">Em que posso te ajudar?</h2>
         </div>
         <img class="call-to-action" src="<?php echo get_template_directory_uri(); ?>/assets/images/justice-crown-logo.svg">
-        <div class="scroll-down">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/scroll-down.svg">
+        <div class="scroll-down ">
+            <img class="vert-move" src="<?php echo get_template_directory_uri(); ?>/assets/images/scroll-down.svg">
         </div>
     </section>
 
@@ -33,47 +33,42 @@ get_header();
                 <p class="sub-heading">OAB/DF 64294</p>
                 <h2 class="heading mb-30">Dr. Paulo Henrique de Sá</h2>
 
-                <div class="about-card-wrapper mb-75 mt-75">
+                <div class="card-wrapper about mb-75 mt-75">
                     <div class="card clear-fix">
                         <div class="card-image animated invisible" data-class-in="fadeInLeft" data-class-out="">
-                            <img src="https://www.stanchierifamilylaw.com//wp-content/themes/sfl2019/img/board-room.jpg"
-                                 alt="" class="photo">
+                            <img class="call-to-action" src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-1.jpg">
                         </div>
                         <div class="card-body animated invisible" data-class-in="fadeInRight" data-class-out="">
                             <h3>Sobre</h3>
                             <p>Eu ajudo consumidores que se sentiram prejudicados a encontrar uma solução jurídica e
                                 satisfatória dentro de uma relação comercial.</p>
-                            <p><a href="#">Conheça</a></p>
+                            <p><a class="see-more" href="#">Saiba mais sobre mim</a></p>
                         </div>
                     </div>
                 </div>
 
-                <div class="about-card-wrapper mb-75 mt-75">
+                <div class="card-wrapper about mb-75 mt-75">
                     <div class="card image-align-right clear-fix">
                         <div class="card-image animated invisible" data-class-in="fadeInRight" data-class-out="">
-                            <img src="https://www.stanchierifamilylaw.com//wp-content/themes/sfl2019/img/board-room.jpg"
-                                 alt="" class="photo">
+                            <img class="call-to-action" src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-2.jpg">
                         </div>
                         <div class="card-body animated invisible" data-class-in="fadeInLeft" data-class-out="">
                             <h3>Serviços</h3>
-                            <p>Eu ajudo consumidores que se sentiram prejudicados a encontrar uma solução jurídica e
-                                satisfatória dentro de uma relação comercial.</p>
-                            <p><a href="#">Veja todos</a></p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p><a class="see-more" href="#">Conheça todos os serviços</a></p>
                         </div>
                     </div>
                 </div>
 
-                <div class="about-card-wrapper mb-75 mt-75">
+                <div class="card-wrapper about mb-75 mt-75">
                     <div class="card clear-fix">
                         <div class="card-image animated invisible" data-class-in="fadeInLeft" data-class-out="">
-                            <img src="https://www.stanchierifamilylaw.com//wp-content/themes/sfl2019/img/board-room.jpg"
-                                 alt="" class="photo">
+                            <img class="call-to-action" src="<?php echo get_template_directory_uri(); ?>/assets/images/bg-3.jpg">
                         </div>
                         <div class="card-body animated invisible" data-class-in="fadeInRight" data-class-out="">
                             <h3>Orientação jurídica</h3>
-                            <p>Eu ajudo consumidores que se sentiram prejudicados a encontrar uma solução jurídica e
-                                satisfatória dentro de uma relação comercial.</p>
-                            <p><a href="#">Veja todos</a></p>
+                            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p><a class="see-more" href="#">Saiba mais</a></p>
                         </div>
                     </div>
                 </div>
