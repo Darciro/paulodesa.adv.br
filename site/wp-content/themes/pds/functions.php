@@ -166,3 +166,18 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Creates a options page for manage the blog
+ */
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title'    => __('Opções do tema'),
+		'menu_title'    => __('Opções do tema'),
+		'menu_slug'     => 'pds-general-settings',
+		'capability'    => 'edit_posts',
+		'redirect'      => false
+	));
+
+}
+

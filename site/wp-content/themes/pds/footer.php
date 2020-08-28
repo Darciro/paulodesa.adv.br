@@ -19,22 +19,22 @@
 
                 <ul class="social-icons">
                     <li>
-                        <a href="#">
+                        <a target="_blank" href="<?php echo get_field('linkedin', 'option') ? get_field('linkedin', 'option') : '#'; ?>">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/linkedin.svg">
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a target="_blank" href="<?php echo get_field('facebook', 'option') ? get_field('facebook', 'option') : '#'; ?>">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook.svg">
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a target="_blank" href="<?php echo get_field('instagram', 'option') ? get_field('instagram', 'option') : '#'; ?>">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/instagram.svg">
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a target="_blank" href="https://wa.me/<?php echo get_field('whatsapp', 'option') ? get_field('whatsapp', 'option') : '#'; ?>">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/whatsapp.svg">
                         </a>
                     </li>
