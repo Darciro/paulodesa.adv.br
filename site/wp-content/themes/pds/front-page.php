@@ -18,7 +18,7 @@ get_header();
     <section id="intro" class="jumbotron">
         <div class="centered text-center">
             <p class="sub-heading"><?php echo get_field('welcome_text', 'option') ? get_field('welcome_text', 'option') : 'Seja bem vindo!'; ?></p>
-            
+
 	        <?php if( have_rows('how_may_i_help_options', 'option') ): ?>
 
                 <h2 class="heading">Em que posso te ajudar?

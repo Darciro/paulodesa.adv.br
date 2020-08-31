@@ -130,7 +130,7 @@ function pds_scripts() {
 
 	wp_enqueue_script( 'pds-navigation', get_template_directory_uri() . '/assets/js/src/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'pds-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/src/skip-link-focus-fix.js', array(), '20151215', true );
-	wp_enqueue_script( 'pds-theme-scripts', get_template_directory_uri() . '/assets/js/dist/bundle.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'pds-theme-scripts', get_template_directory_uri() . '/assets/js/dist/bundle.js', array( 'jquery' ), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -169,15 +169,48 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 /**
  * Creates a options page for manage the blog
  */
-if( function_exists('acf_add_options_page') ) {
+if ( function_exists( 'acf_add_options_page' ) ) {
 
-	acf_add_options_page(array(
-		'page_title'    => __('Opções do tema'),
-		'menu_title'    => __('Opções do tema'),
-		'menu_slug'     => 'pds-general-settings',
-		'capability'    => 'edit_posts',
-		'redirect'      => false
-	));
+	acf_add_options_page( array(
+		'page_title' => __( 'Opções do tema' ),
+		'menu_title' => __( 'Opções do tema' ),
+		'menu_slug'  => 'pds-general-settings',
+		'capability' => 'edit_posts',
+		'redirect'   => false
+	) );
 
 }
 
+add_action( 'add_meta_boxes', 'add_subtitle_meta_box' );
+function add_subtitle_meta_box() {
+	add_meta_box(
+		'auptt_box_id',
+		'Subtítulo da página',
+		'subtitle_meta_box',
+		'page',
+		'advanced',
+		'high'
+	);
+}
+
+function subtitle_meta_box($post)
+{
+	$post_subtitle = get_post_meta($post->ID, '_post_subtitle', true); ?>
+
+	<label for="post_subtitle">Subtítulo</label>
+	<input type="text" name="post_subtitle" id="post_subtitle" class="regular-text" value="<?php echo $post_subtitle; ?>">
+
+	<?php
+}
+
+add_action( 'save_post', 'save_meta_boxes' );
+function save_meta_boxes($post_id)
+{
+	if (array_key_exists('post_subtitle', $_POST)) {
+		update_post_meta(
+			$post_id,
+			'_post_subtitle',
+			$_POST['post_subtitle']
+		);
+	}
+}

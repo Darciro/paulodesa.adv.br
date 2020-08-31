@@ -17,7 +17,11 @@ get_header();
 
     <section id="intro" class="jumbotron">
         <div class="centered text-center">
-            <p class="sub-heading">Subtexto aqui</p>
+
+	        <?php if( $post_subtitle = get_post_meta(get_the_ID(), '_post_subtitle', true) ): ?>
+            <p class="sub-heading"><?php echo $post_subtitle; ?></p>
+            <?php endif; ?>
+
             <h2 class="heading"><?php the_title(); ?></h2>
         </div>
 	    <?php if(has_post_thumbnail()): ?>
